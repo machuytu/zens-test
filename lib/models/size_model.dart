@@ -1,7 +1,7 @@
 class SizeModel {
   int? id;
   String? name;
-  int? price;
+  double? price;
 
   SizeModel({this.id, this.name, this.price});
 

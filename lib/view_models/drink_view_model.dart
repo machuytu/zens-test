@@ -1,21 +1,62 @@
 import 'dart:async';
+import 'dart:math';
 
-import 'package:zens_test/models/cart_model.dart';
+import 'package:flutter/material.dart';
 import 'package:zens_test/models/drink_model.dart';
 import 'package:zens_test/resources/json_path.dart';
 import 'package:zens_test/utils/load_json.dart';
 
+import '../views/cart/cart_screen.dart';
 import 'cart_view_model.dart';
 
 /// A view model class for managing the drink functionality.
 /// It provides methods to add drinks to the drink and dispose of the stream controller.
 class DrinkViewModel {
+  final StreamController<String> _filterStreamController =
+      StreamController<String>.broadcast();
+  String _filter = "Phổ biến";
+  String get filter => _filter;
+
+  /// Stream of the filter.
+  Stream<String> get filterStream => _filterStreamController.stream;
+
   final StreamController<List<DrinkModel>> _drinkStreamController =
       StreamController<List<DrinkModel>>.broadcast();
   List<DrinkModel> _drinkList = [];
 
   /// Stream of the drink list.
   Stream<List<DrinkModel>> get drinkStream => _drinkStreamController.stream;
+
+  /// Choose the filter.
+  chooseFilter(String filter) {
+    _filter = filter;
+    _filterStreamController.add(_filter);
+  }
+
+  /// Init filter.
+  loadFilter() {
+    _filterStreamController.add(_filter);
+  }
+
+  /// Filter the drink list.
+  filterDrink(String filter) {
+    if (filter == "Phổ biến") {
+      _drinkList.sort((a, b) => b.favorite!.compareTo(a.favorite!));
+    } else if (filter == "Mua Nhiều") {
+      _drinkList.sort((a, b) => b.rating!.compareTo(a.rating!));
+    } else if (filter == "Giá rẻ") {
+      _drinkList.sort((a, b) => a.salePrice!.compareTo(b.salePrice!));
+    }
+    _drinkStreamController.add(_drinkList);
+  }
+
+  /// Click the favorite button.
+  void clickFavorite(DrinkModel drinkItem) {
+    drinkItem.favorite = drinkItem.favorite == 0 ? 1 : 0;
+    _drinkList.where((element) => element.id == drinkItem.id).first.favorite =
+        drinkItem.favorite;
+    _drinkStreamController.add(_drinkList);
+  }
 
   /// Init the drink list.
   Future<void> loadDrink() async {
@@ -39,8 +80,15 @@ class DrinkViewModel {
     cartViewModel.addDrink(drink);
   }
 
+  openCartScreen(BuildContext context, CartViewModel cartViewModel) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return CartScreen(cartViewModel: cartViewModel);
+    }));
+  }
+
   /// Disposes the stream controller.
   void dispose() {
     _drinkStreamController.close();
+    _filterStreamController.close();
   }
 }

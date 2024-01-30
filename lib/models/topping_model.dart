@@ -1,7 +1,7 @@
 class ToppingModel {
   int? id;
   String? name;
-  int? price;
+  double? price;
 
   ToppingModel({this.id, this.name, this.price});
 

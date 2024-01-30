@@ -7,6 +7,7 @@ class DrinkModel {
   double? salePrice;
   double? favorite;
   double? rating;
+  bool? choose;
 
   DrinkModel(
       {this.id,
@@ -16,7 +17,8 @@ class DrinkModel {
       this.price,
       this.salePrice,
       this.favorite,
-      this.rating});
+      this.rating,
+      this.choose = false});
 
   DrinkModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -27,6 +29,7 @@ class DrinkModel {
     salePrice = json['salePrice'];
     favorite = json['favorite'];
     rating = json['rating'];
+    choose = false;
   }
 
   Map<String, dynamic> toJson() {
@@ -39,6 +42,7 @@ class DrinkModel {
     data['salePrice'] = salePrice;
     data['favorite'] = favorite;
     data['rating'] = rating;
+    data['choose'] = choose; // Added choose option
     return data;
   }
 }
