@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:zens_test/models/drink_model.dart';
@@ -12,19 +11,17 @@ import 'cart_view_model.dart';
 /// A view model class for managing the drink functionality.
 /// It provides methods to add drinks to the drink and dispose of the stream controller.
 class DrinkViewModel {
+  /// Stream of the filter.
   final StreamController<String> _filterStreamController =
       StreamController<String>.broadcast();
   String _filter = "Phổ biến";
   String get filter => _filter;
-
-  /// Stream of the filter.
   Stream<String> get filterStream => _filterStreamController.stream;
 
+  /// Stream of the drink list.
   final StreamController<List<DrinkModel>> _drinkStreamController =
       StreamController<List<DrinkModel>>.broadcast();
   List<DrinkModel> _drinkList = [];
-
-  /// Stream of the drink list.
   Stream<List<DrinkModel>> get drinkStream => _drinkStreamController.stream;
 
   /// Choose the filter.

@@ -10,5 +10,7 @@ class AppImages {
   static const String heartOn = "assets/images/heart_on.svg";
   static const String heartOff = "assets/images/heart_off.svg";
   static const String plusIcon = "assets/images/plus_icon.svg";
+  static const String minusIcon = "assets/images/minus_icon.svg";
   static const String starIcon = "assets/images/star_icon.svg";
+  static const String paymentIcon = "assets/images/payment_icon.svg";
 }

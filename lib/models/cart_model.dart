@@ -8,11 +8,17 @@ class CartModel {
   int? optionId;
   int? sizeId;
   int? toppingId;
+  String? note;
+  int? total;
+  double? payment;
 
   CartModel({
     this.drinkModel,
     this.optionId,
     this.sizeId,
     this.toppingId,
+    this.note,
+    this.total,
+    this.payment,
   });
 }

@@ -16,21 +16,16 @@ class DrinkScreen extends StatefulWidget {
 }
 
 class _DrinkScreenState extends State<DrinkScreen> {
+  /// View model for the drink screen.
   final DrinkViewModel drinkViewModel = DrinkViewModel();
+
+  /// View model for the cart to navigator cart screen.
   final CartViewModel cartViewModel = CartViewModel();
   @override
   void initState() {
-    /// Loads the drink data from the server.
+    // Loads the drink data from the server.
     drinkViewModel.loadDrink();
 
-    /// Loads the option list for the cart from the server.
-    cartViewModel.loadOptionList();
-
-    /// Loads the size list for the cart from the server.
-    cartViewModel.loadSizeList();
-
-    /// Loads the topping list for the cart from the server.
-    cartViewModel.loadToppingList();
     super.initState();
   }
 

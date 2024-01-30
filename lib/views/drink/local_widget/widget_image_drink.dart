@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:intl/intl.dart';
+import 'package:zens_test/resources/app_text_style.dart';
 
 import '../../../models/drink_model.dart';
 import '../../../resources/app_images.dart';
+import '../../../utils/format_text.dart';
 import '../../../view_models/drink_view_model.dart';
 
+/// A widget that displays an image of a drink with additional UI elements such as price and favorite button.
+///
+/// This widget takes a [drinkItem] of type [DrinkModel] and a [drinkViewModel] of type [DrinkViewModel] as required parameters.
+/// The [drinkItem] represents the drink item to be displayed, while the [drinkViewModel] is used to handle the favorite button click event.
+///
+/// The widget renders a stack of UI elements including an image container, a price label, and a favorite button.
+/// The image container displays the image of the drink item with a circular border.
+/// The price label shows the sale price of the drink item in a centered position.
+/// The favorite button allows the user to toggle the favorite status of the drink item.
 class WidgetImageDrink extends StatelessWidget {
   const WidgetImageDrink({
     super.key,
@@ -19,7 +29,6 @@ class WidgetImageDrink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final NumberFormat currency = NumberFormat('#,##0', 'vi_VN');
     return Stack(
       children: [
         Container(
@@ -50,16 +59,9 @@ class WidgetImageDrink extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                "${currency.format(drinkItem.salePrice)}đ",
+                FormatText.current(drinkItem.salePrice ?? 0.0),
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Color(0xFF040303),
-                  fontSize: 14,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                  height: 0.10,
-                  letterSpacing: 0.14,
-                ),
+                style: AppTextStyle.drinkSalePriceTextStyle,
               ),
             ),
           ),

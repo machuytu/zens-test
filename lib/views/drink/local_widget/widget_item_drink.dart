@@ -3,12 +3,17 @@ import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
 import 'package:zens_test/models/drink_model.dart';
 import 'package:zens_test/resources/app_images.dart';
+import 'package:zens_test/resources/app_text_style.dart';
 import 'package:zens_test/view_models/drink_view_model.dart';
 
 import '../../../view_models/cart_view_model.dart';
 import 'widget_add_drink.dart';
 import 'widget_image_drink.dart';
 
+/// A widget that represents an item of a drink in a list.
+///
+/// This widget displays the name, description, rating, and favorite count of a drink.
+/// It also provides an option to add the drink to the cart.
 class WidgetItemDrink extends StatelessWidget {
   final DrinkModel drinkItem;
   final DrinkViewModel drinkViewModel;
@@ -50,22 +55,14 @@ class WidgetItemDrink extends StatelessWidget {
                     children: [
                       Text(
                         drinkItem.name ?? "",
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 18.21,
-                          fontFamily: 'Poppins',
-                        ),
+                        style: AppTextStyle.listDrinkNameTextStyle,
                       ),
                       const SizedBox(height: 4),
                       SizedBox(
                         width: double.infinity,
                         child: Text(
                           drinkItem.description ?? "",
-                          style: const TextStyle(
-                              color: Color(0xFF616161),
-                              fontSize: 14,
-                              fontFamily: 'Poppins',
-                              overflow: TextOverflow.ellipsis),
+                          style: AppTextStyle.drinkDescriptionTextStyle,
                         ),
                       ),
                     ],
@@ -94,11 +91,7 @@ class WidgetItemDrink extends StatelessWidget {
                               const SizedBox(width: 4),
                               Text(
                                 "${drinkItem.rating}",
-                                style: const TextStyle(
-                                  color: Color(0xFF616161),
-                                  fontSize: 12,
-                                  fontFamily: 'Poppins',
-                                ),
+                                style: AppTextStyle.drinkDetailTextStyle,
                               ),
                             ],
                           ),
@@ -112,11 +105,7 @@ class WidgetItemDrink extends StatelessWidget {
                               const SizedBox(width: 8),
                               Text(
                                 formattedNumber,
-                                style: const TextStyle(
-                                  color: Color(0xFF616161),
-                                  fontSize: 12,
-                                  fontFamily: 'Poppins',
-                                ),
+                                style: AppTextStyle.drinkDetailTextStyle,
                               ),
                             ],
                           ),

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:zens_test/resources/app_text_style.dart';
+import 'package:zens_test/utils/format_text.dart';
 
-import '../../models/cart_model.dart';
-import '../../models/drink_model.dart';
-import '../../resources/app_images.dart';
+import '../../../models/drink_model.dart';
+import '../../../resources/app_images.dart';
 
+/// A widget that displays the header of a cart item.
+///
+/// This widget is used to show the name, description, rating, and price of a drink in the cart.
+/// It takes a [DrinkModel] as input and displays the relevant information.
 class WidgetHeaderCart extends StatelessWidget {
   const WidgetHeaderCart({
     super.key,
@@ -20,23 +25,13 @@ class WidgetHeaderCart extends StatelessWidget {
       children: [
         Text(
           drink!.name ?? "",
-          style: const TextStyle(
-            color: Color(0xFF040202),
-            fontSize: 24,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w400,
-          ),
+          style: AppTextStyle.drinkNameTextStyle,
         ),
         SizedBox(
           width: 364,
           child: Text(
             drink!.description ?? "",
-            style: const TextStyle(
-              color: Color(0xFF616161),
-              fontSize: 14,
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.w400,
-            ),
+            style: AppTextStyle.drinkDescriptionTextStyle,
           ),
         ),
         SizedBox(
@@ -44,12 +39,11 @@ class WidgetHeaderCart extends StatelessWidget {
           height: 28,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   const SizedBox(width: 8),
                   Row(
@@ -60,42 +54,26 @@ class WidgetHeaderCart extends StatelessWidget {
                       const SizedBox(width: 8),
                       Text(
                         "${drink!.rating}",
-                        style: const TextStyle(
-                          color: Color(0xFF040202),
-                          fontSize: 14,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: AppTextStyle.ratingTextStyle,
                       ),
                     ],
                   ),
                 ],
               ),
               const SizedBox(width: 16),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    '59.000đ',
+                    "${FormatText.current(drink!.price ?? 0.0)}",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      decoration: TextDecoration.lineThrough,
-                      color: Color(0xFF616161),
-                      fontSize: 14,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w400,
-                    ),
+                    style: AppTextStyle.priceLineThroughTextStyle,
                   ),
-                  SizedBox(width: 12),
+                  const SizedBox(width: 12),
                   Text(
-                    '45.000đ',
-                    style: TextStyle(
-                      color: Color(0xFFFE724C),
-                      fontSize: 24,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w600,
-                    ),
+                    "${FormatText.current(drink!.salePrice ?? 0.0)}",
+                    style: AppTextStyle.priceTextStyle,
                   ),
                 ],
               ),

@@ -3,6 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../resources/app_images.dart';
 
+/// A widget that displays an icon for adding a drink.
+///
+/// This widget is typically used as a button to trigger an action when tapped.
+/// It displays a circular container with a plus icon inside.
+/// The color of the container can be customized using the [color] property.
+/// The [onTap] callback is called when the icon is tapped.
 class AddDrinkIcon extends StatelessWidget {
   final void Function()? onTap;
   const AddDrinkIcon({

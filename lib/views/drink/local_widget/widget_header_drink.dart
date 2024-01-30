@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:zens_test/resources/app_text_style.dart';
 
 import '../../../resources/app_images.dart';
 
+/// A widget that displays the header of a drink.
+///
+/// This widget is used to show the header of a drink in a specific layout.
+/// It includes an image background, a header image, and text describing the drink.
 class WidgetHeaderDrink extends StatelessWidget {
   final Size size;
+
+  /// Constructs a [WidgetHeaderDrink] with the given [size].
   const WidgetHeaderDrink({
     super.key,
     required this.size,
@@ -46,26 +53,15 @@ class WidgetHeaderDrink extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: 'Trà\n',
-                        style: TextStyle(
-                          color: Color(0xFF272D2F),
-                          fontSize: 44,
-                        ),
+                        style: AppTextStyle.bannerTextStyle,
                       ),
                       TextSpan(
                         text: 'Mix\n',
-                        style: TextStyle(
-                          color: Color(0xFFFE724C),
-                          fontSize: 68,
-                          fontFamily: 'Righteous',
-                        ),
+                        style: AppTextStyle.bannerPriorityTextStyle,
                       ),
                       TextSpan(
                         text: '40 sự lựa chọn cho bạn',
-                        style: TextStyle(
-                          color: Color(0xFF616161),
-                          fontSize: 16,
-                          fontFamily: 'Poppins',
-                        ),
+                        style: AppTextStyle.bannerDescriptionTextStyle,
                       )
                     ],
                   ),
