@@ -70,7 +70,7 @@ class WidgetNoteCart extends StatelessWidget {
             width: 356,
             child: Text(
               TextData.noteDescription,
-              style: AppTextStyle.drinkDescriptionTextStyle,
+              style: AppTextStyle.noteDescriptionTextStyle,
             ),
           ),
           noteFocusNode.hasFocus

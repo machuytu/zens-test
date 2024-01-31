@@ -49,6 +49,12 @@ class AppTextStyle {
     fontWeight: FontWeight.w400,
     overflow: TextOverflow.ellipsis,
   );
+  static const TextStyle noteDescriptionTextStyle = TextStyle(
+    color: AppColors.detail,
+    fontSize: 14,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w400,
+  );
   static const TextStyle drinkDetailTextStyle = TextStyle(
     color: AppColors.detail,
     fontSize: 12,
