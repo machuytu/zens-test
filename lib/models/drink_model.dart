@@ -29,7 +29,7 @@ class DrinkModel {
     salePrice = json['salePrice'];
     favorite = json['favorite'];
     rating = json['rating'];
-    choose = false;
+    choose = false; // Added choose option
   }
 
   Map<String, dynamic> toJson() {
@@ -42,7 +42,7 @@ class DrinkModel {
     data['salePrice'] = salePrice;
     data['favorite'] = favorite;
     data['rating'] = rating;
-    data['choose'] = choose; // Added choose option
+    data['choose'] = choose;
     return data;
   }
 }
