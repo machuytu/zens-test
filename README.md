@@ -50,11 +50,7 @@ By using the MVVM pattern, the project achieves separation of concerns and impro
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/machuytu/zens-test).
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-# References
+## References
 
 - [ZenS flutter_evalutation_test link](https://github.com/khoitd253/flutter_evalutation_test/blob/main/README.md)
 - [Figma UI](https://www.figma.com/file/RjeIVQXNsLaNMLKXRyLNYh/UI-Evaluation-Test---Mobile-team?type=design&node-id=0-1&mode=design&t=hFDgnDsjYY1eoXZP-0)

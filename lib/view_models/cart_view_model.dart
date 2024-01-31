@@ -61,15 +61,15 @@ class CartViewModel {
 
   /// Calculates the payment for a drink in the cart.
   ///
-  /// The [drink] parameter represents the drink model.
-  /// The [total] parameter represents the quantity of the drink.
-  /// The optional [sizeId], [optionId], and [toppingId] parameters represent the selected size, option, and topping IDs respectively.
-  ///
-  /// Returns the total payment for the drink, taking into account the sale price of the drink and any additional costs based on the selected size, option, and topping.
+  /// The payment is calculated based on the sale price of the drink and any additional costs such as the selected size, topping, and option.
+  /// The [drink] parameter represents the drink model for which the payment is being calculated.
+  /// The [total] parameter represents the total quantity of the drink in the cart.
+  /// The optional parameters [sizeId], [optionId], and [toppingId] represent the selected size, option, and topping IDs respectively.
+  /// Returns the calculated payment as a double value.
   double paymentCart(DrinkModel drink, total,
       {int? sizeId, int? optionId, int? toppingId}) {
     // Calculate the payment based on the sale price of the drink and any additional costs
-    double payment = drink.salePrice! * total;
+    double payment = drink.salePrice!;
 
     // Add the price of the selected size, if any
     if (sizeId != null) {
@@ -79,18 +79,20 @@ class CartViewModel {
 
     // Add the price of the selected topping, if any
     if (toppingId != null) {
-      payment +=
-          _toppingList.where((element) => element.id == sizeId).first.price ??
-              0.0;
+      payment += _toppingList
+              .where((element) => element.id == toppingId)
+              .first
+              .price ??
+          0.0;
     }
 
     // Add the price of the selected option, if any
     if (optionId != null) {
       payment +=
-          _optionList.where((element) => element.id == sizeId).first.price ??
+          _optionList.where((element) => element.id == optionId).first.price ??
               0.0;
     }
-
+    payment *= total;
     return payment;
   }
 
@@ -179,6 +181,11 @@ class CartViewModel {
       loadNewPayment();
       _cartStreamController.add(_cartList);
     }
+  }
+
+  addOrder(String note) {
+    _cartList.last.note = note;
+    _cartStreamController.add(_cartList);
   }
 
   /// Disposes the stream controller.

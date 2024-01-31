@@ -4,6 +4,7 @@ import 'package:zens_test/utils/format_text.dart';
 import 'package:zens_test/view_models/cart_view_model.dart';
 
 import '../../../models/topping_model.dart';
+import '../../../resources/app_colors.dart';
 import '../../../resources/app_text_style.dart';
 
 /// A widget that displays the toppings in the cart.
@@ -66,7 +67,7 @@ class WidgetToppingCart extends StatelessWidget {
                             cartViewModel.changeTopping(null);
                           }
                         },
-                        activeColor: const Color(0xFFFE724C),
+                        activeColor: AppColors.primary,
                         title: Text(listToppings[index].name ?? ""),
                         secondary: Text(
                           "+${FormatText.current(listToppings[index].price ?? 0.0)}",

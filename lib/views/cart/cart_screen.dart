@@ -52,7 +52,7 @@ class _CartScreenState extends State<CartScreen> {
                   final cartItem = snapshot.data!.last;
                   return body(cartItem, size);
                 }
-                return const SizedBox();
+                return const Center(child: CircularProgressIndicator());
               }),
         ),
       ),
@@ -120,6 +120,7 @@ class _CartScreenState extends State<CartScreen> {
           cartViewModel: widget.cartViewModel,
           total: cartItem.total,
           payment: cartItem.payment,
+          noteController: noteController,
         ),
       ],
     );

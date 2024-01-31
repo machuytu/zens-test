@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zens_test/views/drink/drink_screen.dart';
 
+import 'resources/app_colors.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,8 +17,8 @@ class MyApp extends StatelessWidget {
       navigatorKey: StateManager.navigatorKey,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFFFE724C),
-          primary: const Color(0xFFFE724C),
+          seedColor: AppColors.primary,
+          primary: AppColors.primary,
         ),
         useMaterial3: true,
       ),

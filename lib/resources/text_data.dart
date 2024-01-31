@@ -1,4 +1,7 @@
 class TextData {
+  static const String banner1 = 'Trà\n';
+  static const String banner2 = 'Mix\n';
+  static const String banner3 = '40 sự lựa chọn cho bạn';
   static const String findWith = 'Tìm kiếm theo:';
   static const String toppingText = 'Món ăn kèm';
   static const String notHaveTo = '(Không bắt buộc )';

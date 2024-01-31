@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
 import 'package:zens_test/models/drink_model.dart';
+import 'package:zens_test/resources/app_box_shadow.dart';
 import 'package:zens_test/resources/app_images.dart';
 import 'package:zens_test/resources/app_text_style.dart';
 import 'package:zens_test/view_models/drink_view_model.dart';
@@ -131,14 +132,7 @@ class WidgetItemDrink extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
       ),
-      shadows: const [
-        BoxShadow(
-          color: Color(0x3FD3D1D8),
-          blurRadius: 36.43,
-          offset: Offset(18.21, 18.21),
-          spreadRadius: 0,
-        )
-      ],
+      shadows: AppBoxShadow.itemDrink,
     );
   }
 }

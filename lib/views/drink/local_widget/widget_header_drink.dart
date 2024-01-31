@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zens_test/resources/app_text_style.dart';
+import 'package:zens_test/resources/text_data.dart';
 
 import '../../../resources/app_images.dart';
 
@@ -52,15 +53,15 @@ class WidgetHeaderDrink extends StatelessWidget {
                   TextSpan(
                     children: [
                       TextSpan(
-                        text: 'Trà\n',
+                        text: TextData.banner1,
                         style: AppTextStyle.bannerTextStyle,
                       ),
                       TextSpan(
-                        text: 'Mix\n',
+                        text: TextData.banner2,
                         style: AppTextStyle.bannerPriorityTextStyle,
                       ),
                       TextSpan(
-                        text: '40 sự lựa chọn cho bạn',
+                        text: TextData.banner3,
                         style: AppTextStyle.bannerDescriptionTextStyle,
                       )
                     ],

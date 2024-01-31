@@ -1,29 +1,31 @@
 import 'package:flutter/material.dart';
 
+import 'app_colors.dart';
+
 class AppTextStyle {
   static const TextStyle bannerTextStyle = TextStyle(
-    color: Color(0xFF272D2F),
+    color: AppColors.banner,
     fontSize: 44,
   );
   static const TextStyle bannerPriorityTextStyle = TextStyle(
-    color: Color(0xFFFE724C),
+    color: AppColors.primary,
     fontSize: 68,
     fontFamily: 'Righteous',
   );
   static const TextStyle bannerDescriptionTextStyle = TextStyle(
-    color: Color(0xFF616161),
+    color: AppColors.detail,
     fontSize: 16,
     fontFamily: 'Poppins',
   );
   static const TextStyle priceTextStyle = TextStyle(
-    color: Color(0xFFFE724C),
+    color: AppColors.primary,
     fontSize: 24,
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w600,
   );
   static const TextStyle priceLineThroughTextStyle = TextStyle(
     decoration: TextDecoration.lineThrough,
-    color: Color(0xFF616161),
+    color: AppColors.detail,
     fontSize: 14,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w400,
@@ -35,44 +37,44 @@ class AppTextStyle {
     fontFamily: 'Poppins',
   );
   static const TextStyle drinkNameTextStyle = TextStyle(
-    color: Color(0xFF040202),
+    color: AppColors.title,
     fontSize: 24,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
   );
   static const TextStyle drinkDescriptionTextStyle = TextStyle(
-    color: Color(0xFF616161),
+    color: AppColors.detail,
     fontSize: 14,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w400,
     overflow: TextOverflow.ellipsis,
   );
   static const TextStyle drinkDetailTextStyle = TextStyle(
-    color: Color(0xFF616161),
+    color: AppColors.detail,
     fontSize: 12,
     fontFamily: 'Poppins',
   );
   static const TextStyle drinkSalePriceTextStyle = TextStyle(
-    color: Color(0xFF040303),
+    color: AppColors.salePrice,
     fontSize: 14,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
   );
   static const TextStyle cartOptionTextStyle = TextStyle(
-    color: Color(0xFF040202),
+    color: AppColors.title,
     fontSize: 16,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
   );
   static const TextStyle totalTextStyle = TextStyle(
-    color: Color(0xFF040202),
+    color: AppColors.title,
     fontSize: 16,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w500,
   );
 
   static const TextStyle ratingTextStyle = TextStyle(
-    color: Color(0xFF040202),
+    color: AppColors.title,
     fontSize: 14,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w600,
@@ -89,13 +91,13 @@ class AppTextStyle {
     fontWeight: FontWeight.w600,
   );
   static const TextStyle dropDownTextStyle = TextStyle(
-    color: Color(0xFFFE724C),
+    color: AppColors.primary,
     fontSize: 14,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w400,
   );
   static const TextStyle dropDownTitleTextStyle = TextStyle(
-    color: Color(0xFF111719),
+    color: AppColors.dropdownText,
     fontSize: 14,
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w400,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zens_test/resources/app_box_shadow.dart';
 
 /// Back button widget
 class WidgetBackButton extends StatelessWidget {
@@ -16,14 +17,7 @@ class WidgetBackButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-          shadows: const [
-            BoxShadow(
-              color: Color(0x4CD3D1D8),
-              blurRadius: 20,
-              offset: Offset(5, 10),
-              spreadRadius: 0,
-            )
-          ],
+          shadows: AppBoxShadow.button,
         ),
         child: const Center(
             child: Icon(

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:zens_test/resources/app_colors.dart';
 import 'package:zens_test/resources/app_text_style.dart';
 import 'package:zens_test/view_models/cart_view_model.dart';
 import 'package:zens_test/view_models/drink_view_model.dart';
 
 import '../models/cart_model.dart';
+import '../resources/app_box_shadow.dart';
 import '../resources/app_images.dart';
 
 /// A widget that represents a cart button.
@@ -49,14 +51,7 @@ class WidgetCartButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-          shadows: const [
-            BoxShadow(
-              color: Color(0x4CD3D1D8),
-              blurRadius: 20,
-              offset: Offset(5, 10),
-              spreadRadius: 0,
-            )
-          ],
+          shadows: AppBoxShadow.button,
         ),
         child: Stack(
           children: [
@@ -70,7 +65,7 @@ class WidgetCartButton extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(2),
                   decoration: ShapeDecoration(
-                    color: const Color(0xFFF11616),
+                    color: AppColors.red,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),

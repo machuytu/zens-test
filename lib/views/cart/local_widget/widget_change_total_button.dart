@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../resources/app_colors.dart';
+
 class WidgetChangeTotalButton extends StatelessWidget {
   final String assetName;
   final void Function()? onTap;
@@ -18,7 +20,7 @@ class WidgetChangeTotalButton extends StatelessWidget {
         width: 32,
         height: 32,
         decoration: const BoxDecoration(
-          color: Color(0xFFFE724C),
+          color: AppColors.primary,
           shape: BoxShape.circle,
         ),
         child: SvgPicture.asset(

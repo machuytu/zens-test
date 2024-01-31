@@ -64,7 +64,7 @@ class WidgetFilterDrink extends StatelessWidget {
                 isDense: true,
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.zero,
-                constraints: BoxConstraints(maxHeight: 40, maxWidth: 140),
+                constraints: BoxConstraints(maxHeight: 40, maxWidth: 135),
               ),
               dropdownMenuEntries: filterList
                   .map<DropdownMenuEntry<String>>((String filterValue) {

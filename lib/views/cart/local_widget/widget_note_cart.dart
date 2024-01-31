@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zens_test/resources/app_colors.dart';
 import 'package:zens_test/resources/text_data.dart';
 import 'package:zens_test/view_models/cart_view_model.dart';
 
@@ -59,7 +60,7 @@ class WidgetNoteCart extends StatelessWidget {
                 borderSide: BorderSide.none,
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              fillColor: const Color(0xFFF7F7F7),
+              fillColor: AppColors.bgNote,
             ),
             keyboardType: TextInputType.multiline,
             maxLines: 5,

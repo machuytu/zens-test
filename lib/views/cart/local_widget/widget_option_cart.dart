@@ -4,6 +4,7 @@ import 'package:zens_test/utils/format_text.dart';
 import 'package:zens_test/view_models/cart_view_model.dart';
 
 import '../../../models/option_model.dart';
+import '../../../resources/app_colors.dart';
 import '../../../resources/app_text_style.dart';
 
 /// A widget that displays a list of options for a cart item.
@@ -64,7 +65,7 @@ class WidgetOptionCart extends StatelessWidget {
                             cartViewModel.changeOption(null);
                           }
                         },
-                        activeColor: const Color(0xFFFE724C),
+                        activeColor: AppColors.primary,
                         title: Text(listOptions[index].name ?? ""),
                         secondary: Text(
                           "+${FormatText.current(listOptions[index].price ?? 0.0)}",
