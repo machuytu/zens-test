@@ -49,9 +49,8 @@ class DrinkViewModel {
 
   /// Click the favorite button.
   void clickFavorite(DrinkModel drinkItem) {
-    drinkItem.favorite = drinkItem.favorite == 0 ? 1 : 0;
-    _drinkList.where((element) => element.id == drinkItem.id).first.favorite =
-        drinkItem.favorite;
+    _drinkList.where((element) => element.id == drinkItem.id).first.choose =
+        drinkItem.choose;
     _drinkStreamController.add(_drinkList);
   }
 
